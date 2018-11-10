@@ -1,62 +1,75 @@
 ---
-title: Welcome to the Blog!
-date: "2018-07-01"
-featuredImage: './featured.jpg'
+title: Week 1 - Bar Trivializer
+date: "2018-11-09"
+featuredImage: "./featured.jpg"
 ---
 
-Welcome to the new blog, I hope you enjoy your stay! This is an example of how you can control what excerpt shows up.
+Welcome to my blog about my experiences with Lambda School's Labs, a 7 week immersive capstone experience where students are split into small teams and assigned a project to work on.
 
 <!-- end -->
 
-## Lorem ipsum dolor sit amet, consectetur adipiscing elit
+## First Week Introductions
 
-Sed urna justo, scelerisque consectetur pharetra vitae, facilisis vel diam. Maecenas auctor enim a volutpat mattis. Morbi sit amet turpis a purus ornare pellentesque sit amet et ipsum. Suspendisse imperdiet mi at felis aliquet, nec consectetur arcu dignissim. Sed vitae diam maximus, maximus diam ac, scelerisque mi.
+I was put into a group of 4 for our Labs project to create a bar trivia game that will help moderators come up with questions, rounds, and games to host at trivia nights. We decided to use React, Node.js/Express for our project.
 
-*   Morbi sit amet turpis a purus
-*   Etiam tempor ultricies mi
-    *   Maecenas auctor enim a volutpat mattis
-*   Sed urna justo, scelerisque consectetur pharetra vitae
+**Front End Tasks this week**
 
-Nam nec augue vel nisl placerat faucibus. Donec congue **nulla quis nunc** sagittis placerat. Pellentesque non tincidunt velit, cursus porttitor tellus. Suspendisse pulvinar tortor at _augue aliquam sagittis_. Duis non pulvinar augue. Ut tristique dignissim ligula, eget tempus diam molestie non. Nulla ultrices eleifend rutrum. Mauris convallis sollicitudin dui, pulvinar suscipit velit. Maecenas viverra finibus metus vitae blandit.
+- Front End Deployment
+  - Github: https://github.com/Lambda-School-Labs/Labs8-Trivializer/pull/18
+  - Trello: https://trello.com/c/hbDFf0o5/29-continuous-deployment-for-frontend
+- Navigation
+  - Github: https://github.com/Lambda-School-Labs/Labs8-Trivializer/pull/15
+  - Trello: https://trello.com/c/n5mJcaMe/5-navigation
+- Site Templates
+  - Github: https://github.com/Lambda-School-Labs/Labs8-Trivializer/pull/19
+  - Trello: https://trello.com/c/cqjg5w4o/8-github-repo
 
-### Pellentesque consectetur facilisis venenatis
+**Back End Tasks this week**
 
-Nam ullamcorper, orci nec tempor hendrerit, lorem nunc laoreet diam, vel gravida sem mi quis augue. Nunc odio velit, facilisis quis dictum non, facilisis quis felis. Vivamus [elementum dapibus nibh](https://google.com), eget aliquet nunc luctus maximus. Sed finibus risus eget ultrices maximus. Aliquam commodo consectetur diam eget tristique. Nunc quis erat quis felis fringilla tempus. Cras tempor nibh dolor, ac lacinia lacus ultrices eu.
+- Backend Routes
+  - Github: https://github.com/Lambda-School-Labs/Labs8-Trivializer/pull/25
+  - Trello: https://trello.com/c/UXPUJanh/23-back-end-routes-get-all-saved-games-for-a-user
 
-> Quisque tempor nulla turpis, ut placerat arcu lobortis nec. Aenean sed vehicula nisi. Nullam vitae placerat enim. Etiam hendrerit enim vel tempor fermentum. Morbi rutrum euismod ipsum a luctus.
+### Front End Focus
 
-Morbi et libero id metus tempor imperdiet eget non mi. Mauris pulvinar quis enim at placerat. Vestibulum vitae dapibus lectus, ut elementum est.
+![signup](./signup.jpg)
 
-### Pellentesque facilisis venenatis mi, sit amet molestie nisl ornare et
-
-Morbi posuere facilisis eros vel euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam malesuada dapibus dolor non cursus. Sed in turpis justo. Cras sed hendrerit nulla. Sed ornare, leo et suscipit tincidunt, justo diam sollicitudin risus, vitae vulputate nulla augue et lacus.
-
-1.  Morbi posuere facilisis
-2.  Pellentesque habitant morbi tristique
-3.  Etiam malesuada dapibus
-
-Ut vel ligula ante. Proin quis metus magna. Nulla nec dui vulputate, semper orci in, sagittis dolor. Mauris dictum neque non fermentum consectetur. Integer vel pellentesque ex, ut tincidunt quam.
-
-#### Sed ac orci a dolor venenatis vulputate
-
-Sed sollicitudin, turpis ac malesuada dapibus, magna dui semper orci, in congue justo felis quis ante. Phasellus consequat et dolor fringilla accumsan. Pellentesque ullamcorper porttitor dolor et imperdiet.
-
-![Space](./space.jpg)
-
-Pellentesque consectetur facilisis venenatis. Nam ullamcorper, orci nec tempor hendrerit, lorem nunc laoreet diam, vel gravida sem mi quis augue. Nunc odio velit, facilisis quis dictum non, facilisis quis felis. Vivamus elementum dapibus nibh, eget aliquet nunc luctus maximus. Sed finibus risus eget ultrices maximus. Aliquam commodo consectetur diam eget tristique. Nunc quis erat quis felis fringilla tempus. Cras tempor nibh dolor, ac lacinia lacus ultrices eu.
-
-##### Nulla nec dui vulputate, semper orci in, sagittis dolor
-
-Mauris dictum neque non fermentum consectetur. Integer vel pellentesque ex, ut tincidunt quam. Sed ac orci a dolor venenatis vulputate. Sed sollicitudin, turpis ac malesuada dapibus, magna dui semper orci, in congue justo felis quis ante. Phasellus consequat et dolor fringilla accumsan. Pellentesque ullamcorper porttitor dolor et imperdiet.
+I chose to focus more on the front end tasks of our project for this week, designing the templates for the site, as well as the navigation routes, and frontend deployment of our site. I spent quite some time getting flash messages to work on each validation field of the signup and signin page, so that whenever a user forgets a field or fills out a field incorrectly, a warning message will pop up.
 
 ```javascript
-$(document).ready(function() {
-    console.log('More jQuery, wow!')
-})
+class App extends Component {
+  componentDidMount() {
+    this.props.fetchReq();
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Route exact path="/" component={LandingPage} />
+        <Route path="/billing" component={Billing} />
+        <Route path="/gameslist" component={GamesList} />
+        <Route path="/setting" component={Setting} />
+        <Route path="/invoices" component={Invoices} />
+        <Route path="/game/:id" component={Game} />
+      </div>
+    );
+  }
+}
 ```
 
-###### ras aliquet ipsum ut enim pellentesque, id varius quam placerat
+I used React Router to set up the routes for each of the pages we were aiming to have. Each time a user clicks on the navigation bar, it will link them to that page. A setback I had with the routes was the signup & signin modals didn't go away when React Router routed the user to a different link. I ended up using a temporary solve of `window.reload()` for a temporary fix.
 
-Maecenas non scelerisque leo. Sed id purus fringilla, consequat magna non, faucibus neque. Cras ornare nisi a lectus ultricies convallis. Integer tristique dictum eros, et elementum ante consectetur eget. Phasellus sollicitudin est vestibulum suscipit pellentesque. Duis in eros cursus magna laoreet aliquam vel a lectus. Nulla ut nisi vitae ipsum sollicitudin vestibulum. Aenean sit amet mattis odio. Vestibulum ultrices sed ipsum nec pretium. Integer non turpis nunc. Praesent tincidunt tincidunt alique
+### Teamwork & Milestone Reflections
 
-Integer mollis dolor non libero placerat, ut efficitur nisi ultricies. Etiam ac lacinia urna, eget ornare nunc. Suspendisse eget eros id turpis gravida semper. Duis ornare lorem et est pellentesque, quis rhoncus leo vestibulum. Nullam eu nulla ut elit rutrum iaculis. Cras a laoreet elit, in aliquet erat. Sed interdum varius posuere. Pellentesque eget luctus erat. Nam quis sem in ligula efficitur bibendum.
+Working as a team has been a great experience this week. We planned the project well from the beginning, spending a lot of time going over a mock of it and dividing the task up pretty evenly. Everyone in the group has been amazing and very respectful, and we've learned a lot from this experience so far.
+
+![signup](./team.jpg)
+
+Next week, I plan to dive a little bit more into backend, helping configure endpoints for the trivia games that we will have. We are using `https://opentdb.com/api_config.php` as our api for the games. The great thing is, the API itself already gives us a lot to choose from, so our goal is to pull from that API and store the games in a database that we've created to go along with users that have created an account on our wbsite.
+<br><br>
+Our milestone for this week was to finish deployment both on the front and back end for our project, and we were able to achieve that goal:
+
+        - Front End Link: https://trivializer.netlify.com/
+        - Back End Link: https://testsdepl.herokuapp.com/
+
+Next week we will be perfecting our Front End Look, as well as assing in some OAuth for our authentication system.
